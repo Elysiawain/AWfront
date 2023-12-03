@@ -1,0 +1,213 @@
+.form {
+    display: flex;/*设置弹性布局*/
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 26px;
+    border-radius: 20px;
+    position: relative;
+    margin: 5.5rem auto;
+}
+
+.title {
+    font-size: 28px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: #fff;
+}
+
+.title::before {
+    width: 18px;
+    height: 18px;
+    background-color: rgba(234, 230, 223, 0.9);
+}
+
+.title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+    color: #fff;
+    font-size: 14px;
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: #fff;
+    text-decoration: none;
+    ;
+}
+
+.signin a:hover {
+    color: rgba(234, 230, 223, 0.9);
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    width: 100%;
+    padding: 10px 0px 20px 0px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+
+}
+
+.form label .input+span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+    top: 15px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+.form label .input:valid+span {
+    color: green;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: rgba(130, 157, 147,.8);
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+}
+
+.submit:hover{
+    background-color: #829D93;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/*---------------加载动画------------------------*/
+.loadering{
+    transition: all 0.3s;
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    top:44% ;
+    left: 44%;
+    display: none;
+}
+.loader {
+    width: 106px;
+    height: 56px;
+    display: block;
+    margin: 30px auto;
+    background-image: linear-gradient(#fff 50px, transparent 0), linear-gradient(#e1e1e1 50px, transparent 0), linear-gradient(#e1e1e1 50px, transparent 0), linear-gradient(#e1e1e1 50px, transparent 0), radial-gradient(circle 14px, #e1e1e1 100%, transparent 0);
+    background-size: 48px 15px , 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+    background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+    background-repeat: no-repeat;
+    position: relative;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+  }
+  
+  .loader::after,
+  .loader::before {
+    content: '';
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border: 6px solid #e1e1e1;
+    border-radius: 50%;
+    left: -45px;
+    top: -10px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#e1e1e1 64px, transparent 0), linear-gradient(#e1e1e1 66px, transparent 0), radial-gradient(circle 4px, #e1e1e1 100%, transparent 0);
+    background-size: 40px 1px , 1px 40px, 8px 8px;
+    background-position: center center;
+    box-sizing: border-box;
+    animation: bike 0.3s linear infinite;
+  }
+  
+  .loader::before {
+    left: 25px;
+    top: 60px;
+  }
+  
+  @keyframes bike {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+/*输入合法判断*/
+.judge{
+    position: absolute;
+    top: 0.8rem;
+    left: 22.3rem;
+}
+body {
+    background-color: #fff
+}
+input[type="password"]::-ms-reveal{
+	display: none;
+	}
+input[type="password"]::-ms-clear{
+	display: none;
+	}
+input[type="password"]::-o-clear{
+	display: none;
+}

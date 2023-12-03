@@ -1,0 +1,240 @@
+/* CSS Document */
+/* 初始化样式 */
+ul,
+li,
+h1,
+h2,
+h3,
+p {
+    padding: 0;
+    color: #000;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+h3 {
+    text-align: left;
+    color: #000;
+}
+
+
+
+/* 设置body主体部分 */
+body {
+
+    margin: 0px auto;
+    line-height: 21px;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+
+
+/* 清除浮动 */
+.clear {
+    clear: both;
+}
+
+.menu li {
+    list-style: none;
+}
+
+
+
+.head {
+    position: relative;
+    width: 100%;
+    background: rgb(173, 194, 181);
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    margin: 0;
+}
+.back:hover{
+    color: rgba(255, 255, 255, 1);
+}
+.head h1 {
+    color: #fff;
+    font-weight: normal;
+}
+
+
+
+/* 设置主要内容部分 */
+.content {
+    background: rgba(255, 255, 255, 1);
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 50px rgba(0, 0, 0, 0) solid;
+}
+
+
+
+#submit {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    display: inline-block;
+    padding: 10px 30px;
+    color: #fff;
+    margin-top: 20px;
+}
+
+
+.pad {
+    padding: 20px 70px;
+    display: block;
+}
+
+.main {
+    margin: 20px 40px;
+}
+
+
+.cs {
+    margin: 30px 40px;
+    font-size: 18px;
+    line-height: 30px;
+
+}
+
+.cs p {
+    font-size: 20px;
+    text-align: left;
+    line-height: 1.5;
+    text-indent: 2em;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.fenjie {
+    position: relative;
+    bottom: 12px;
+    color: rgba(230, 230, 230);
+    left: 14px;
+
+}
+
+
+
+
+.bar {
+    margin: 20px 40px;
+    text-align: center;
+    line-height: 15px;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.bar img {
+    width: 700px;
+    height: 400px;
+    opacity: 0.85;
+}
+
+
+
+/* footer部分 */
+.footer {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(114, 114, 114, 0.8);
+    margin-top: 300px;
+
+
+
+}
+
+.footer img {
+    margin-left: 200px;
+}
+
+.copyright {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 900px;
+    height: 200px;
+    color: #F7F7F7;
+}
+
+.last {
+    width: 300px;
+    height: 200px;
+    float: left;
+    line-height: 22px;
+}
+
+.footer h6 {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: 10px;
+}
+
+.footer p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.footer .lianjie {
+    width: 600px;
+    height: 30px;
+    position: absolute;
+    bottom: 5%;
+    left: 33%;
+}
+
+.lianjie li {
+    width: 150px;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    position: relative;
+
+}
+
+.lianjie li a:hover {
+    color: #d29e53;
+}
+
+/* 点击收藏 */
+input[type="checkbox"] {
+    display: none;
+    position: relative;
+
+}
+
+label svg {
+    width: 40px;
+    height: 44px;
+    fill: none;
+    stroke: rgba(0, 0, 0, .4);
+    stroke-width: 0.08rem;
+}
+
+input[type="checkbox"]:checked+label svg {
+    fill: #FFC107;
+    animation: pop_42 0.5s ease-out;
+    stroke: rgba(0, 0, 0, 0);
+}
+
+@keyframes pop_42 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

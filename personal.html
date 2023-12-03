@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="head.ico" type="image/x-icon"><!--修改网页标题图像-->
+    <title>个人中心</title>
+    <link rel="stylesheet" href="./CSS/personal.css">
+    <script src="./JS/axios.js"></script>
+</head>
+<style>
+    body {
+        background-image: url(./images/personal_bj.jpg);
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-attachment: fixed;
+    }
+</style>
+
+<body>
+    <div id="banner" style="position: relative;">
+        <a href="index.html"
+            style="text-decoration: none;position: absolute;top: 10px;left: 10px;z-index: 9;display: block;color: rgba(255,255,255,.6);font-weight: 700;">返回首页</a>
+        <img src="./images/panda.jpg" alt="" style="opacity: 1;height: 420px;">
+        <!-- 修改用户的数据 -->
+        <div class="modifiedData" type="button">编辑资料</div>
+        <!-- 创建修改用户数据的对话框 -->
+        <div class="dialog">
+            <!-- 直接创建一个表单用于修改数据 -->
+            <form method="post" name="file">
+                <!-- 修改用户的头像 -->
+                <input type="file" name="file" id="choseHead">
+                <input type="button" value="取消修改" id="close">
+                <input type="button" value="确定修改" id="sure">
+            </form>
+        </div>
+    </div>
+    <div id="main">
+        <div id="main_left">
+            <img src="./images/head_sp.jpg" alt="" class="touxiang">
+            <p>
+                <span>用户名:</span><span class="username"></span><br>
+                <span>邮箱:</span><span class="email"></span><br>
+                <span>电话:</span><span class="phone"></span><br>
+            </p>
+        </div>
+        <div style="color:black;font-weight: 800;font-size: 24;position: absolute;top: 4px;left: 480px;">个人简介:<br><br>
+            <!-- <p class="moren">这个人很懒，还什么都没写哟~~~</p> -->
+        </div>
+
+
+        <!-------------------------用户个人简介输入---------------------->
+
+        <textarea name="" id="" cols="30" rows="10" class="jianjie" maxlength="100" minlength="10"> </textarea>
+        <button class="queren">保存</button>
+        <div class="button" style="height: 40px;line-height: 40px;">
+            <span style="font-weight: 550;" id="collect" class="buttoned">我的收藏</span>
+            <span style="font-weight: 550;" id="liuyanb">留言板</span>
+        </div>
+        <div id="main_right">
+            <ul class="guess">
+                <li>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <a href=""><img src="./images/Amagi.jpg" alt="" width="185px"
+                                        style="border-radius: 10%;"></a>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">梅狸猫</p>
+                                <p class="t2">梅狸猫是一种哺乳动物，外形区别于狸花猫，头顶呈现出独特的灰白色毛发，呈中分状，前肢毛色偏黑，背部有两条白色条带。</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <a href=""><img src="./images/fengniao.jpg" alt="" width="185px"
+                                        style="border-radius: 10%;"></a>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">蜂鸟</p>
+                                <p class="t2">蜂鸟是已知的唯一能倒着飞的鸟，它们经常在远离花朵的时候这样做。</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <a href=""><img src="./images/tuishun.jpg" alt="" width="185px"
+                                        style="border-radius: 10%;"></a>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">兔狲</p>
+                                <p class="t2">兔狲是一种外形和猫咪很相似的一种猫科动物，这种动物的表情十分丰富，是猫科动物中的表情帝，但由于很难人工饲养，所以大家在动物园中很难见到它的身影。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <a href=""><img src="./images/shuilai.jpg" alt="" width="185px"
+                                        style="border-radius: 10%;"></a>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">水獭</p>
+                                <p class="t2">水獭睡觉时会“牵手”，所以不会飘离对方。而且看上去超级可爱。</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <a href=""><img src="./images/pangxie.jpg" alt="" width="185px"
+                                        style="border-radius: 10%;"></a>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">螃蟹</p>
+                                <p class="t2">螃蟹也是会蜕壳的动物之一，因为螃蟹在生长过程中，坚硬的外壳并不会随着身体的长大而长大，所以螃蟹需要定期的蜕一次壳才能保证身体的正常生长。</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <a href=""><img src="./images/haitun.jpg" alt="" width="185px"
+                                        style="border-radius: 10%;"></a>
+                            </div>
+                            <div class="flip-card-back">
+                                <p class="title">海豚</p>
+                                <p class="t2">
+                                    海豚的躯干呈纺锤形，皮肤光滑无毛，身体矫健而灵活，善于跳跃和潜泳，是在水中行动最迅速的哺乳动物。它们的大脑沟回复杂，记忆力良好，是智商最高的动物家族之一。</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <textarea name="liuyan" class="liuyan" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+    <!------------------------------ footer ------------------->
+    <div class="footer">
+        <div style="margin-left: 12%;line-height: 40px;position: absolute;padding-top: 10px;"><!---手打logo-->
+            <span style="font-size: 60px;color: #cefd85;font-weight: 600;">A</span>
+            <span style="color: #82dee4;font-size: 40px;font-weight: 500"> nimals</span> <br>
+            <span style="font-size: 50px;color: #cefd85;font-weight: 600;">W</span>
+            <span style="color: #82dee4;font-size: 40px;font-weight: 500">orld</span>
+        </div>
+        <div class="copyright">
+            <div class="last">
+                <h6>联系方式</h6>
+                <p><b> 作者邮箱：</b>3215624200@qq.com</p>
+                <p><b>作者电话 ：</b>17347861274</p>
+            </div>
+            <div class="last">
+                <h6>关于我们</h6>
+                <p style="font-size: 14px;font-weight: 600;">制作团队成员：</p>
+                <p>22级软工唐无忌，22级软工涂旭，<br> 22级软工王贵东，22级软工黎明。</p>
+            </div>
+            <div class="last">
+                <h6>地址</h6>
+                <p>重庆城市科技学院16栋宿舍楼437寝室</p>
+            </div>
+        </div>
+        <div class="lianjie">
+            <ul>
+                <li style="padding-left: 40px;">友情链接：</li>
+                <li><a href="https://species.sciencereading.cn/biology/v/biologicalIndex/122.html"
+                        style="text-decoration: none;">中国生物志库</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|</li>
+                <li style="padding-left: 20px;"><a href="https://baike.baidu.com/"
+                        style="text-decoration: none;">百度百科</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;|</li>
+                <li style="position: absolute; left: 500px ;"><a href="#" style="text-decoration: none; ">问题反馈</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+        //引入用户数据
+        let user = JSON.parse(sessionStorage.getItem('Users'))
+        let username = document.querySelector('.username')
+        let email = document.querySelector('.email')
+        let phone = document.querySelector('.phone')
+        //加载头像
+        const head = document.querySelector('.touxiang')
+        head.src = user.headPortrait
+        //加载用户名
+        username.innerText = user.username
+        //加载邮箱
+        email.innerText = user.email
+        //加载手机号
+        phone.innerText = user.phone
+        //加载个人简介
+
+
+        //修改数据功能，当用户点击头像时，弹出修改头像的对话框
+        const modifiedData = document.querySelector('.modifiedData')
+        const choseHead = document.querySelector('#choseHead')
+        modifiedData.onclick = function () {
+            console.log("修改功能调用")
+            //弹出修改数据的对话框
+            let dialog = document.querySelector('.dialog')
+            dialog.style.display = 'block'
+        }
+        choseHead.addEventListener('change', (event) => {
+            const file = event.target.files[0]
+            const formData = new FormData();
+            formData.append('file', file);
+            console.log("准备发送请求,数据为：" + file)
+            //当点击确认按钮后上传并修改头像
+            const confirm = document.querySelector('#sure')
+            confirm.onclick = function () {
+                console.log("确认修改头像")
+                //上传头像
+                axios.post('http://82.156.155.197:8080/upload', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then(response => {
+                    console.log(response)
+                    let imageUrl = response.data.data;
+                    head.src = imageUrl
+                    console.log("数据渲染成功！");
+                    console.log("修改后的头像图片访问地址为：" + imageUrl);
+                    //将imageUrl更新到数据库
+                    const params = {
+                        username: user.username,
+                        headPortrait: imageUrl
+                    }
+                    console.log("图片路径准备写入数据库" + params.username);
+                    axios.put('http://82.156.155.197:8080/updateUser', params)
+                        .then(res => {
+                            console.log("图片路径更新完成");
+                            console.log(res)
+                            console.log("准备更改会话数据");
+                            //更改会话数据
+                            user.headPortrait = imageUrl
+                            sessionStorage.setItem("Users", JSON.stringify(user))
+                            console.log("会话数据更新完成");
+                        })
+                        .catch(err => {
+                            console.log("更新失败！");
+                            console.error(err);
+                        })
+                    //关闭对话框
+                    console.log("关闭对话框")
+                    let dialog = document.querySelector('.dialog')
+                    dialog.style.display = 'none'
+                }).catch(error => {
+                    console.log("上传失败");
+                    console.error('Error:', error);
+                });
+            }
+
+        })
+        //关闭对话框
+        const close = document.querySelector('#close')
+        close.onclick = function () {
+            console.log("关闭对话框")
+            let dialog = document.querySelector('.dialog')
+            dialog.style.display = 'none'
+        }
+        head.onclick = function () {
+            console.log("用户头像被点击")
+        }
+
+        //--------------------------------------------------个人中心功能
+        let collect = document.querySelector('#collect')
+        let liuyan = document.querySelector('#liuyanb')
+        let sc = document.querySelector('.guess')
+        let ly = document.querySelector('.liuyan')
+        collect.addEventListener('click', function () {
+            liuyan.classList.remove('buttoned')
+            collect.classList.add('buttoned')
+            sc.style.display = 'flex'
+            ly.style.display = 'none'
+        })
+        liuyan.addEventListener('click', function () {
+            collect.classList.remove('buttoned')
+            liuyan.classList.add('buttoned')
+            sc.style.display = 'none'
+            ly.style.display = 'flex'
+        })
+        //-----------------------------------------个人简介，这里可以存入数据库
+        let jianjie = document.querySelector('.jianjie')//文本域
+        let moren = document.querySelector('.moren')//提示
+        const queren = document.querySelector('.queren')//确认按钮
+        //加载个人简介
+        jianjie.innerHTML=user.individualResume
+        jianjie.addEventListener('input', function () {
+            console.log(jianjie.value)
+        })
+        if (jianjie.value !== '') {
+                //点击确认后准备更新数据库数据
+                queren.addEventListener('click', function () {
+                    //准备发送更新请求
+                    const individualResume={
+                        username:user.username,
+                        individualResume:jianjie.value
+                    }
+                    console.log("准备发送更新请求");
+                    axios.put('http://82.156.155.197:8080/updateUser',individualResume)
+                    .then(res => {
+                        console.log("更新请求发送完成");
+                        console.log(res)
+                        //修改会话数据
+                        user.individualResume = res.data.individualResume
+                        
+                        sessionStorage.setItem('Users', JSON.stringify(user))
+
+                    })
+                    .catch(err => {
+                        console.error(err); 
+                    })
+
+                })
+            }
+        //确认按钮点击
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+/*清除常规默认样式，可以方便代码的编写，与可阅读性*/
+
+/*清除网页中所有原有的内外边距*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*统一设置网页的字体和大小（后续可更改）*/
+body{
+    font:normal 400 "Microsoft YaHei" 16px;
+    color: #ccc;
+    background-color: rgba(255, 255, 255, alpha);
+}
+
+/*清除列表的默认样式*/
+ul,
+ol{
+    list-style: none;
+}
+
+/*去除a标签的默认下划线，与字体颜色*/
+a{
+    text-decoration: none;
+    color: #ccc;
+}
+
+/*去除input的默认样式*/
+input{
+    border: none;
+    outline: none;
+    color: #ccc;
+}
+/*设置img的对齐方式*/
+/* img{
+    vertical-align: middle;
+} */
+
+/*浮动*/
+/*左浮动，在代码编写中请将所有的左浮动都命名为“fl”通过父级关系去定位*/
+.fl{
+    float: left;
+}
+
+/*右浮动，在代码编写中请将所有的右浮动都命名为“fl”通过父级关系去定位*/
+.fr{
+    float: right;
+}

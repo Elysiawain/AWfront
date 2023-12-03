@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="shortcut icon" href="head.ico" type="image/x-icon"><!--修改网页标题图像-->
+    <style>
+        body {
+            background-image: url(images/login_image.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+    </style>
+    <script src="JS\axios.js"></script>
+</head>
+
+<body>
+    <div class="form-container xuhua">
+        <p class="title">Animals World</p>
+        <form class="form">
+            <div class="input-group">
+                <label for="username">用户名</label>
+                <input type="text" name="username" id="username" placeholder="请输入用户名">
+            </div>
+            <div class="input-group" style="position: relative;">
+                <span for="password">密码</span>
+                <input type="password" name="password" id="password" placeholder="请输入密码">
+                <span class="conceal" id='conceal' style="position: absolute; top: 24px;left: 283px;">
+                    <img src="./images/close.jpg" alt="" width="30px" class="eye"></span>
+                <div class="forgot">
+                    <a rel="noopener noreferrer" href="#">忘记密码 ?</a>
+                </div>
+            </div>
+            <button class="sign">登录</button>
+        </form>
+        <div class="social-message">
+            <div class="line"></div>
+            <p class="message">其他登录</p>
+            <div class="line"></div>
+        </div>
+        <div class="social-icons">
+            <!------------------------ 微信图标----------------------------------- -->
+            <a href="#">
+                <button aria-label="Log in with Google" class="icon">
+                    <svg t="1681792085863" class="icon" viewBox="0 0 1101 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2356" width="200" height="200">
+                        <path
+                            d="M966.912 853.9648L1036.6976 1024 864.7168 901.4272C831.232 911.0528 796.8768 915.9424 762.5216 915.9424 575.9488 915.9424 424.2176 779.0848 424.2176 610.9184 424.2176 442.7264 575.9488 305.8944 762.5216 305.8944 949.0176 305.8944 1100.8 442.7264 1100.8 610.9184 1100.8 706.8416 1051.1104 796.416 966.912 853.9648ZM762.5216 349.9008C599.6032 349.9008 467.0464 466.9952 467.0464 610.9184 467.0464 754.8416 599.6032 871.9104 762.5216 871.9104 796.0832 871.9104 829.6192 866.688 862.208 856.2944L872.1408 853.1456 939.904 901.4272 913.0752 836.1216 929.2544 826.3168C1009.8176 777.5232 1057.9712 696.9856 1057.9712 610.9184 1057.9712 466.9952 925.4144 349.9008 762.5216 349.9008ZM872.4736 567.7568C848.7936 567.7568 829.6192 548.0704 829.6192 523.8016 829.6192 499.4816 848.7936 479.744 872.4736 479.744 896.128 479.744 915.2512 499.4816 915.2512 523.8016 915.2512 548.0704 896.128 567.7568 872.4736 567.7568ZM655.1808 567.7568C631.5264 567.7568 612.3264 548.0704 612.3264 523.8016 612.3264 499.4816 631.5264 479.744 655.1808 479.744 678.8352 479.744 697.9584 499.4816 697.9584 523.8016 697.9584 548.0704 678.8352 567.7568 655.1808 567.7568ZM567.424 251.0592C567.424 279.424 545.1008 302.4128 517.4784 302.4128 489.856 302.4128 467.4304 279.424 467.4304 251.0592 467.4304 222.6944 489.856 199.7056 517.4784 199.7056 545.1008 199.7056 567.424 222.6944 567.424 251.0592ZM213.4528 251.0592C213.4528 222.6944 235.8016 199.7056 263.3728 199.7056 290.9952 199.7056 313.4208 222.6944 313.4208 251.0592 313.4208 279.424 290.9952 302.4128 263.3728 302.4128 235.8016 302.4128 213.4528 279.424 213.4528 251.0592ZM391.9616 44.0064C199.5008 44.0064 42.8544 182.5792 42.8544 352.9472 42.8544 454.912 99.8144 550.3232 195.1488 608.1536L211.2512 617.9072 176.2816 703.0528 264.3712 640.3328 274.304 643.4816C296.5504 650.5728 319.1552 655.36 341.9136 658.3552 343.936 673.7664 347.0592 688.8448 350.9504 703.6928 324.352 701.0816 297.856 696.2176 271.744 688.6144L79.4368 825.5744 157.3888 635.8016C58.5216 569.2416 0 464.768 0 352.9472 0 158.336 175.8464 0 391.9616 0 555.136 0 695.2192 90.3168 754.1504 218.2912 738.3552 218.5728 722.7904 219.7248 707.5072 221.5936 651.5456 116.8384 531.328 44.0064 391.9616 44.0064Z"
+                            p-id="2357"></path>
+                    </svg>
+                </button>
+            </a>
+            <!-- ----------------------qq图标------------------------------------ -->
+            <a href="#">
+                <button aria-label="Log in with Twitter" class="icon">
+                    <svg t="1681792133313" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                        xmlns="http://www.w3.org/2000/svg" p-id="2362" width="200" height="200">
+                        <path
+                            d="M538 902l-52 0c-12.667 0-21 2.333-25 7-12.667 12.667-30 22.167-52 28.5s-47.333 9.5-76 9.5c-36.667 0-71-6.333-103-19-4-2-7.833-4.167-11.5-6.5s-6.833-4.5-9.5-6.5-5.167-4.333-7.5-7-4.167-5.167-5.5-7.5-2.333-5-3-8-1-6.167-1-9.5c0-9.333 3.5-17.5 10.5-24.5S221 844.667 237 838c9.333-2.667 15.833-6 19.5-10s5.5-9 5.5-15c0-17.333-2-28-6-32-3.333-4-6.667-9-10-15l-12-16c-3.333-6-6.667-10.667-10-14-6.667-12.667-17.333-19-32-19-4 0-7.5 0.5-10.5 1.5s-6.833 2.833-11.5 5.5-8 4.667-10 6c-12.667 12-21.333 18.333-26 19-7.333 0-11.333-15.333-12-46l0-5c0-21.333 4-57.667 12-109 13.333-38.667 34.667-73 64-103 8.667-8 13-18.667 13-32l0-12c0-19.333 6.333-38.667 19-58 3.333-2.667 5.333-5.5 6-8.5s1-6.5 1-10.5l0-7c0-15.333 1-30.167 3-44.5s5.167-28.167 9.5-41.5 9.833-26.333 16.5-39 14.5-25.167 23.5-37.5 19.167-24.167 30.5-35.5c49.333-55.333 113.333-83 192-83 12.667 0 25 0.667 37 2s23.833 3.5 35.5 6.5 23 6.833 34 11.5 21.667 10 32 16 20.5 13 30.5 21 19.667 16.667 29 26c18 20 33 40 45 60s21.5 41.833 28.5 65.5S794 333.333 794 358l0 7c0 8.667 2 15 6 19 12.667 19.333 19 38.667 19 58l0 12c0 17.333 4.333 28 13 32 30 30 51.333 64.333 64 103 14 43.333 18.333 79.667 13 109 0 15.333-1.5 26.833-4.5 34.5s-7.833 13.167-14.5 16.5c-4.667 0-13.333-6.333-26-19-8.667-8.667-19.333-13-32-13l-12 0c-1.333 0-2.667 0.333-4 1s-2.833 1.167-4.5 1.5-3.167 1.167-4.5 2.5l-4 2-3.5 3.5c0 0-1 1.333-3 4s-2.833 4.167-2.5 4.5c-4.667 12.667-15.333 27.667-32 45-10 10-12.333 20.667-7 32 0 6 5.333 13.333 16 22l3 3c29.333 13.333 44.333 28.333 45 45 0 9.333-3 17.5-9 24.5s-15.667 13.833-29 20.5c-12.667 6-28 10.667-46 14s-37 5-57 5c-53.333 0-96-12.667-128-38 4.667 0 3.667-1.333-3-4L538 902zM685 1024c64 0 115-12.667 153-38 20.667-14 36.5-29.333 47.5-46s16.5-35.667 16.5-57c0-23.333-6.333-44.667-19-64l9 0c2 0 4.833-0.5 8.5-1.5s6.5-2.5 8.5-4.5c36-12 57.333-44 64-96 6-44.667-0.333-96-19-154-2.667-8.667-5.833-17.333-9.5-26s-7.667-17-12-25-9.167-16-14.5-24-10.833-15.667-16.5-23-11.833-15-18.5-23c0-28-6.333-58-19-90 0-32-3.667-62.5-11-91.5s-18.5-56.833-33.5-83.5-34.167-51.667-57.5-75c-10-10-20.333-19.167-31-27.5s-21.5-16-32.5-23-22.333-13.333-34-19S640.833 22 628.5 18 603.667 10.667 591 8s-25.5-4.667-38.5-6S526 0 512 0c-32 0-62.5 3.667-91.5 11S363.667 29.5 337 44.5s-51.667 34.167-75 57.5c-68 76-102 159.333-102 250-12.667 25.333-19 55.333-19 90l0 6c-9.333 7.333-17.833 15.833-25.5 25.5s-14.333 19.667-20 30-10.333 20.167-14 29.5S74 552.333 70 563c-18.667 58-25 109.333-19 154 3.333 24.667 10.667 45.167 22 61.5s25.333 27.833 42 34.5c2 0 6.333 1 13 3s11 3 13 3c-12.667 19.333-19 40.667-19 64 0 44 21.333 78.333 64 103 9.333 6 19.5 11.5 30.5 16.5s22.833 9 35.5 12 25.667 5.333 39 7c13.333 1.667 27.333 2.5 42 2.5 70.667 0 124-15 160-45l32 0C567 1009 620.333 1024 685 1024z"
+                            p-id="2363"></path>
+                    </svg>
+                </button>
+            </a>
+        </div>
+        <p class="signup">没有账户？
+            <a rel="noopener noreferrer" href="register.html" class="">注册</a>
+        </p>
+    </div>
+
+    <!---------------------------------------加载动画-------->
+
+    <div class="loadering loadered"><span class="loader"></span><span
+            style="color: #fff;display: inline-block;margin: 13px 60px;">loading...</span></div>
+
+
+
+
+
+
+    <script>
+        const eye = document.querySelector('.eye')
+        const pswd = document.querySelector('#password')
+        let i = 0
+        eye.addEventListener('click', function () {
+            i++
+            eye.src = './images/open.jpg'
+            pswd.type = 'text'
+            if (i % 2 === 0) {
+                i = 0
+                eye.src = './images/close.jpg'
+                pswd.type = 'password'
+            }
+        })
+
+        // 获取需要的标签
+        const sign = document.querySelector('.sign')
+        let Arr = localStorage.getItem('UserCenter')
+        let arr = JSON.parse(Arr)
+        let uname = document.querySelector('[name=username]')
+        let upassword = document.querySelector('[name=password]')
+        let users = localStorage.getItem("UserCenter") || []
+        // 登录
+        sign.addEventListener('click', function (e) {
+            // 阻止默认行为
+            e.preventDefault ? e.preventDefault() : e.returnValue = false
+            console.log(users)
+            // 获取本地存储的数据
+            sign.onclick = function () {
+                if (users.length === 0) {
+                    let tsname = document.querySelector('[for=username]')
+                    let tspwd = document.querySelector('[for=password]')
+                    tsname.innerHTML = '密码或用户名错误！'
+                    tsname.style.color = 'red'
+                    return false
+                }
+            }
+            let userArr = JSON.parse(users)
+            // console.log(userArr, typeof(userArr))
+            let sel = 0
+
+            // 判断账号密码是否正确
+            console.log("登录数据准备发送");
+            let jwt
+            let cheack = false
+            //向后端发送登录请求
+            const data = {
+                username: uname.value,
+                password: upassword.value
+            }
+            axios.post('http://82.156.155.197:8080/login', data)
+                .then(res => {
+                    jwt = res.data.data
+                    if (jwt.length > 1) {
+                        console.log("准备跳转首页");
+                        //只要前端获取到jwt令牌，就直接跳转到首页代表已经登录成功
+                        let xuhua = document.querySelector(".xuhua")
+                        let xuhua1 = document.querySelector(".loadering")
+                        xuhua.style.filter = 'blur(10px)'
+                        xuhua1.style.display = 'block'
+                        sessionStorage.setItem("jwt", JSON.stringify(jwt))//将令牌写入会话中
+                        //向后端获取对应用户的数据并存储在sessionStorage中
+                        console.log("开始写入用户信息");
+                        console.log(uname.value);
+                        if (username !== null) {
+                            console.log(username);
+                            const selectData = {
+                                username: uname.value
+                            }
+                            axios.post('http://82.156.155.197:8080/selectUsers', selectData)
+                                .then(res => {
+                                    sessionStorage.setItem("Users", JSON.stringify(res.data.data))
+                                    console.log(res.data.data)
+                                })
+                                .catch(err => {
+                                    console.error(err);
+                                })
+                        }            
+                        console.log("登录数据发送完成");
+                        setTimeout(jump, 1000)
+                        function jump() {
+                            xuhua1.style.display = 'none'
+                            xuhua.style.filter = 'blur(0px)'
+                            location.href = "index.html"
+                            return
+                        }
+                    }
+
+                })
+                .catch(err => {
+                    console.error(err);
+                    //如果jwt令牌不存在，就代表登录失败，提示用户账号或者密码错误
+                    let tsname = document.querySelector('[for=username]')
+
+                    let tspwd = document.querySelector('[for=password]')
+                    tsname.innerHTML = '密码或用户名错误！'
+                    tspwd.innerHTML = '密码或用户名错误！'
+                    tsname.style.color = 'red'
+                })
+
+
+            //直接验证jwt令牌是否存在，因为在后端只有登录成功后才会下发令牌
+
+            //登录失败
+            //   // 提示账号或者密码有误
+            //   if (sel===0||userArr==='') {
+            //             let tsname=document.querySelector('[for=username]')
+            //             let tspwd=document.querySelector('[for=password]')
+            //             tsname.innerHTML='密码或用户名错误！'
+            //             tsname.style.color='red' 
+            //     }
+
+            //   // 遍历数组，判断账号密码是否正确
+            //   for(let i = 0; i < userArr.length; i++) {
+            //     // 获取遍历用户
+            //     let user = userArr[i]
+
+            //     if(user.username === uname.value && user.password === upassword.value) {
+            //         let xuhua=document.querySelector(".xuhua")
+            //         let xuhua1=document.querySelector(".loadering")
+            //         xuhua.style.filter='blur(10px)'
+            //         xuhua1.style.display='block'
+            //         sel=1
+            //       sessionStorage.setItem("login", JSON.stringify(user))
+            //       setTimeout(jump,1000)
+            //         function jump(){
+            //         xuhua1.style.display='none'
+            //         xuhua.style.filter='blur(0px)'
+            //         location.href = "index.html"
+            //       } 
+            //       return
+            //     }
+            //   }
+
+        })
+    </script>
+</body>
+
+</html>

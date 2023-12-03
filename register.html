@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="CSS/register.css">
+    <link rel="shortcut icon" href="head.ico" type="image/x-icon"><!--修改网页标题图像-->
+    <style>
+        body {
+            background-image: url(images/register_image.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+    </style>
+    <script src="JS/axios.js"></script>
+</head>
+
+<body>
+    <form class="form">
+        <p class="title" style="margin-bottom:10px;">注册</p>
+        <p class="message" style="margin-bottom:0;">注册你的账户以登录 </p>
+        <div class="flex">
+        </div>
+        <label>
+            <input required="" placeholder="" type="email" class="input" name="email">
+            <span>邮箱</span>
+            <span class="judge"></span>
+        </label>        
+        <label>
+            <input required="" placeholder="" type="text" class="input" name="username">
+            <span class="um">用户名</span>
+            <span class="judge"><img src=" " alt="" width="14px" class="judge1"></span>
+        </label>
+        <label>
+            <input required="" placeholder="" type="text" class="input" name="phone">
+            <span class="ph">电话</span>
+            <span class="judge"><img src=" " alt="" width="14px" class="judge2"></span>
+        </label>
+        <label style="position: relative;">
+            <input required="" placeholder="" type="password" class="input" id="password" name="password">
+            <span class="psd">密码</span>
+            <span style="position: absolute; top: 10px;left: 310px;">
+                <img src="images/close.jpg" alt="" width="30px" class="eye"></span>
+                <span class="judge"><img src=" " alt="" width="14px" class="judge3"></span>
+        </label>
+        <label style="position: relative;">
+            <input required="" placeholder="" type="password" class="input" id="password2" name="ckpassword">
+            <span class="ckpsd">确认密码 </span>
+            <span style="position: absolute; top: 10px;left: 310px;">
+                <img src="images/close.jpg" alt="" width="30px" class="eyes"></span>
+                <span class="judge"><img src=" " alt="" width="14px" class="judge4"></span>
+        </label>
+        <button class="submit">注册</button>
+        <p class="signin">已经有账户 ? <a href="login.html">登录</a></p>
+    </form>
+
+    <!---------------加载动画------------------------>
+    <div class="loadering"><span class="loader"></span></div>
+    <script>
+        /*------------------------眼睛图标的效果切换---------------------*/
+        const eye=document.querySelector('.eye')
+        const eyes=document.querySelector('.eyes')
+        const pswd=document.querySelector('#password')
+        const pswd2=document.querySelector('#password2')
+        let i=0,j=0
+        eye.addEventListener('click',function(){
+            i++
+            eye.src='./images/open.jpg'
+            pswd.type='text'        
+            if(i%2===0){
+                i=0
+            eye.src='./images/close.jpg'
+            pswd.type='password'     
+            }
+        })
+        eyes.addEventListener('click',function(){
+            j++
+            eyes.src='./images/open.jpg'
+            pswd2.type='text'        
+            if(j%2===0){
+            eyes.src='./images/close.jpg'
+            pswd2.type='password'     
+            }
+        })
+/*-----------------------------------验证用户输入的合法性-------------------------*/
+/*验证时使用input事件来判断用户输入的内容是否合法，做到实时判断*/
+    //用户名的判断
+        const username=document.querySelector('[name=username]') 
+        const judge1=document.querySelector('.judge1')
+        const um=document.querySelector('.um')
+        username.addEventListener('input',jgeuNmae)
+        function jgeuNmae(){
+            const reg=/^\S{1,7}$/ //用正则表达式去判断
+            if(!reg.test(username.value)){//当用户输入不合法
+                judge1.src='./images/redfork.jpg'
+                um.innerHTML='请你输入1~7位字符！'
+                um.style.color='red'
+                return false
+            }
+            um.innerHTML='用户名'
+            um.style.color='green'
+            judge1.src='./images/hook.jpg'
+            return true
+        }
+        //电话判断
+        const phone=document.querySelector('[name=phone]') 
+        const judge2=document.querySelector('.judge2')
+        const ph=document.querySelector('.ph')
+        phone.addEventListener('input',jgephoneNmae)
+        function jgephoneNmae(){
+            const reg=/^[1][3,4,5,6,7,8,9][0-9]{9}$/ //用正则表达式去判断
+            if(!reg.test(phone.value)){//当用户输入不合法
+                judge2.src='./images/redfork.jpg'
+                ph.innerHTML='请你输入正确的电话格式！'
+                ph.style.color='red'
+                return false
+            }
+            ph.innerHTML='电话'
+            ph.style.color='green'
+            judge2.src='./images/hook.jpg'
+            return true
+        }
+        //密码
+        const pwd=document.querySelector('[name=password]') 
+        const judge3=document.querySelector('.judge3')
+        const pd=document.querySelector('.psd')
+        pwd.addEventListener('input',jgePsNmae)
+        function jgePsNmae(){
+            const reg=/^[a-zA-Z0-9-_]{7,18}$/ //用正则表达式去判断
+            if(!reg.test(pwd.value)){//当用户输入不合法
+                judge3.src='./images/redfork.jpg'
+                pd.innerHTML='请输入更安全的密码！'
+                pd.style.color='red'
+                return false
+            }
+            pd.innerHTML='密码'
+            pd.style.color='green'
+            judge3.src='./images/hook.jpg'
+            return true
+        }
+        //确认密码
+        const ckpwd=document.querySelector('[name=ckpassword]') 
+        const judge4=document.querySelector('.judge4')
+        const ckpd=document.querySelector('.ckpsd')
+        ckpwd.addEventListener('input',jgeckPsNmae)
+        function jgeckPsNmae(){
+            if(ckpwd.value!==pwd.value){//判断前后输入是否一致
+                judge4.src='./images/redfork.jpg'
+                ckpd.innerHTML='前后密码不一致！'
+                ckpd.style.color='red'
+                return false
+            }
+            ckpd.innerHTML='确认密码'
+            ckpd.style.color='green'
+            judge4.src='./images/hook.jpg'
+            return true
+        }
+        //提交按钮
+        const form=document.querySelector('.form')
+/*------------------------------------------------创建本地用户数据对象模型-------------------------------------*/
+const arr = JSON.parse(localStorage.getItem('UserCenter'))||[]
+        // 录入按钮form
+        //用户名username
+        //email:email
+        //电话：phone
+        //密码：password
+        const email=document.querySelector('[name=email]')
+        form.addEventListener('submit',function(e){
+            e.preventDefault()//阻止提交 
+            // 获得表单里的值 把获取到的值追加到数组里面 arr.push()
+            let xuhua1=document.querySelector(".loadering")
+            form.style.filter='blur(10px)'
+            xuhua1.style.display='block'
+            arr.push(
+                {
+                uid:arr.length+1,
+                username: username.value,
+                email: email.value, 
+                phone: phone.value, 
+                password: pwd.value,                
+            }
+                )
+    //请求后端验证该用户是否已存在
+    const data={
+        username:username.value,
+        password:pwd.value,
+        email:email.value,
+        phone:phone.value
+        
+    }
+    console.log(data)
+    axios.post('http://82.156.155.197:8080/register',data)
+    .then(res => {
+        console.log(res)
+        if(res.data.code===1){
+            localStorage.setItem('UserCenter',JSON.stringify(arr))
+            setTimeout(jump,1000)
+            function jump(){
+                xuhua1.style.display='none'
+                location.href='login.html'
+            }
+        }else if(res.data.code===0){
+            //注册失败，提示用户该账号已被注册
+            form.style.filter='blur(0px)'
+            xuhua1.style.display='none'
+             alert('该账号已被注册')
+        }
+    })
+    .catch(err => {
+        console.error(err); 
+    })
+    // const arr = JSON.parse(localStorage.getItem('UserCenter'))||[]
+    //     // 录入按钮form
+    //     //用户名username
+    //     //email:email
+    //     //电话：phone
+    //     //密码：password
+    //     const email=document.querySelector('[name=email]')
+    //     form.addEventListener('submit',function(e){
+    //         e.preventDefault()//阻止提交 
+    //         // 获得表单里的值 把获取到的值追加到数组里面 arr.push()
+    //         let xuhua1=document.querySelector(".loadering")
+    //         form.style.filter='blur(10px)'
+    //         xuhua1.style.display='block'
+    //         arr.push(
+    //             {
+    //             uid:arr.length+1,
+    //             username: username.value,
+    //             email: email.value, 
+    //             phone: phone.value, 
+    //             password: pwd.value,                
+    //         }
+    //             )
+            // 把arr重新存入本地存储
+            // localStorage.setItem('UserCenter',JSON.stringify(arr))
+            // setTimeout(jump,1000)
+            // function jump(){
+            //     xuhua1.style.display='none'
+            //     location.href='login.html'
+            // }
+        })
+     </script>
+</body>
+
+</html>

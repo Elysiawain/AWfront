@@ -1,0 +1,380 @@
+
+/*返回顶部*/
+.backtop{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .3);
+    position: fixed;
+    right: 2px;
+    top: 80%;
+    z-index: 99;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    transform: rotate(270deg);
+    cursor: pointer;
+    border-radius: 50%;
+    padding-bottom: 10px;
+    margin-right: 20px;
+}
+.backtop:hover{
+    transition: all 1s;
+    background-color: rgba(0, 0, 0, .8) ;
+}
+/* 版心 */
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.header{
+    height: 45px;
+    background-color: pink;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h1{
+    float: left;
+}
+.nav{
+    float: left;
+    height: 42px;
+    margin-left: 70px;
+ 
+}
+.nav li{
+    float: left;
+    margin-right: 70px;
+   list-style: none;
+}
+.nav li a{
+    display: block;
+    height: 42px;
+    line-height: 42px;
+    text-decoration: none;
+    padding: 0 9px;
+    font-size: 18px;
+    color:#F7F7F7;
+}
+.MOSTed{
+    transition: all 0.3s;
+    border-bottom: 3px solid lightcoral;
+}
+.nav li a:hover{
+    transition: all .5s;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+.search_box{
+    position: relative;
+    width: 26rem;
+    height: 40px;
+    background-image: url('../images/serach_glass.jpg');
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position-x:0.1rem;
+    background-position-y:0.4rem;
+    transform: translate(675px, 0px);
+    flex: 0 1 auto;
+}
+.search_box .input{
+    position: absolute;
+    width: 15rem;
+    height: 2rem;
+    outline: none;
+    border: none;
+    top: 0.2rem;
+    left: 0rem;
+    border-radius:2rem 2rem 2rem 2rem;
+    padding-left: 2rem;
+    transition: all 1s;
+    background: rgba(255, 255, 255, 0.3);
+    border: 0.1rem solid white;
+    color: black;
+    flex: 0 1 auto;
+}
+.search_box .input:focus{
+    transition: all 1s;
+    width:19rem;
+}
+.search_button{
+    background-color: red;
+    position:absolute;
+    top: 2rem;
+    left: 8rem;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    margin: none;
+    border-radius:50%;
+    overflow: hidden;
+    opacity: 0;
+    flex: 0 1 auto;
+}
+/*搜索键反馈*/
+.search_button:hover{
+  transition: all 0.7s;/*延缓动画时间做反馈*/
+  box-shadow: 8px 0px 5px 0px #3de7bc ;
+}
+.search_box input::placeholder{
+  color: #989797;
+}
+
+/* .banner{
+    height: 420px;
+    
+}
+.banner .wrapper{
+    height: 420px;
+   background-image: url(../images/yang.jpg);
+}
+.banner .right{
+    float: right;
+    width: 228px;
+    height: 300px;
+    background-color:  rgba(255, 255, 255, 0.5);
+    margin-top: 50px;
+    
+}
+.banner .right:hover{
+    background-color:  rgba(255, 255, 255, 0.8);
+}
+.banner .left{
+    padding: 0 20px;
+    float: left;
+    width: 190px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.3);
+    line-height: 44px;
+}
+.banner .left span{
+    float:right;
+}
+.banner .left a{
+    font-size: 14px;
+    color: #fff;
+}
+.banner .left a:hover{
+    color:lightpink;
+}
+.banner .left li:hover{
+    font-weight: 700;
+}
+.banner .right h2{
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+}
+.banner .right .content{
+    padding: 0 18px;
+}
+.banner .right .content dl{
+        padding: 15px 0;
+        border-bottom: 2px solid  orange;
+}
+.banner .right .content dt{
+    font-size: 16px;
+    color: #4e4e4e;
+}
+.banner .right .content dd{
+    font-size: 14px;
+    color: #4e4e4e;
+}
+.banner .right .more{
+    width: 200px;
+    height: 30px;
+    display: block;
+    border: 1px solid #000;
+    margin: 2px auto 0 ;
+    font-size: 16px;
+    color: #00a4ff;
+    font-weight: 700;
+    text-align: center;
+    line-height: 30px;
+    text-decoration: none;
+} */
+/* 精品推荐 */
+/* .changed{
+    opacity: 0;
+} */
+.goods{
+
+    margin-top: 8px;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: rgba(118,118,118, 0.2);
+    line-height: 60px;
+    /* background-image: url(../images/yang.jpg); */
+
+}
+.goods h2{
+    float: left;
+    color: #00a4ff;
+}
+.goods ul{
+    float: left;
+    margin-left: 30px;
+}
+.goods ul li{
+    float: left;
+}
+.goods li a{
+     border-left: 1px solid #000;
+     padding: 0 50px;
+     font-size: 16px;
+}
+.goods ul li:hover{
+    background-color: pink;
+    border-radius: 5%;
+}
+.goods .xingqu{
+    float: right;
+    font-size: 14px;
+    color: #00a4ff;
+}
+.box{
+    position: relative;
+}
+.box .title{
+    margin:0 auto;
+    width: 1200px;
+    height: 40px;
+    background-color: pink;
+}
+.box .title h2{
+    float: left;
+    font-size: 20px;
+    color: #494949;
+    font-weight: 400; 
+}
+.content{
+text-align: center;
+}
+.content li a{
+    color: lightcoral;
+}
+.content li a:hover{
+    transition: all .5s;
+    color:#F7F7F7;
+}
+.box .title a{
+    float: right;
+    margin-right: 30px;
+    font-size: 12px;
+}
+.box .title{
+     margin-top: 20px;
+     background-image: url(../images/yang.jpg);
+}
+
+ .box .content{
+    height: 800px;
+    width: 1200px;
+    background-image: url(../images/yang.jpg);
+    margin:0 auto;
+} 
+ .box .content li{
+    width: 228px;
+    height: 270px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 5%;
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 100px;
+} 
+.box .content li:nth-child(5n){
+    margin-right: 0;
+}
+.box .content img{
+     border-radius:20%;
+     transition: all 1s;
+}
+.box .content img:hover{
+   border-radius: 10%;
+   transition: all 1s;
+}
+.lodmore{
+    position: absolute;
+    right:1%;
+    bottom: 1%;
+    color: white;
+    border: none;
+    background: none;
+}
+.lodmore:hover{
+    color: lightsalmon;
+}
+.lodmore2{
+    position: absolute;
+    right:1%;
+    bottom: 1%;
+    color: white;
+    border: none;
+    background: none;
+}
+.lodmore2:hover{
+    color: lightsalmon;
+}
+.footer{
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color :#727272;
+    margin:0 auto;
+    margin-top: 20px;
+    
+}
+.footer img{
+    margin-left: 200px;
+}
+.copyright{
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 900px;
+    height: 200px;
+    color: #F7F7F7;
+}
+.last{
+    width: 300px;
+    height: 200px;
+    float: left;
+    line-height: 22px;
+}
+.footer h6{
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: 10px;
+}
+.footer p{
+    margin-top: 5px;
+    font-size: 12px;
+}
+.footer .lianjie{
+    width: 600px;
+    height: 30px;
+    position: absolute;
+    bottom: 5%;
+    left: 33%;
+}
+.lianjie li{
+    width: 140px;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    color: white;
+}
+.lianjie li a{
+    color: white;
+}
+.lianjie li a:hover{
+    color: #d29e53;
+    transition: all 1s;
+}

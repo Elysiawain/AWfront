@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="爱动物，喜欢动物，注重动物分类，与动物百科"><!--网页描述，提高搜索-->
+    <meta name="keywords" content="爱动物，喜欢动物，注重动物分类，与动物百科"><!--网页关键字，提高辨识度，优化搜索-->
+    <title>Animals World 爱动物，喜欢动物，注重动物分类，与动物百科</title>
+    <link rel="shortcut icon" href="head.ico" type="image/x-icon"><!--修改网页标题图像-->
+    <!--链接外部css-->
+    <link rel="stylesheet" href="./CSS/base.css">
+    <!-- <link rel="stylesheet" href="./CSS/common.css"> -->
+    <link rel="stylesheet" href="./CSS/index.css">
+    <!--链接外部js-->
+    <script src="./JS/index.js"></script>
+    <script src="./JS/jwt-decode.js"></script>
+
+</head>
+<body style="width: fit-content;width: fit-content;margin: 0 auto;background-color: rgba(100,255,255,.1);">
+<!-----------------------------------头部------------------------------->
+
+<!-----------------------------------回到顶部----------------------------->
+    <div class="backtop" id="bctop" title="返回顶部">
+        >
+    </div>
+
+<!------------------------------------版心-------------------------------->
+ <div class="Login">
+<!--网页logo与搜索框与个人中心-->
+    <div class="logo" id="logo">
+        <div style="line-height: 40px;position: relative;height:130px;width: 23rem;"><!---手打logo-->
+            <span style="font-size: 48px;color: #cefd85;font-weight: 600;position: absolute;left: 45%;">A</span>
+            <span style="color: #82dee4;font-size: 30px;font-weight: 500;position: absolute;left: 57%;top: 6px;"> nimals</span><br>
+            <span style="font-size: 37px;color: #cefd85;font-weight: 600;position: absolute;left: 45%;">W</span>
+            <span style="color: #82dee4;font-size: 30px;font-weight: 500;position: absolute;left: 57%;top: 42px;">orld</span>
+            <span class="slogan">爱动物，更注重动物百科！</span>
+        </div>
+           <!----网页顶端导航-->
+    <div class="top">
+        <ul class="top1" style="display: flex;flex-direction: row;">
+            <li>
+                <a href="#bgc4" class="top_a1">猜你喜欢</a>&nbsp;&nbsp;&nbsp;|
+            </li>
+            <li>
+                <a href="sort1.html" class="top_a2">动物分类</a>&nbsp;&nbsp;&nbsp;|
+            </li>
+            <li>
+                <a href="qtdw.html" class="top_a3">奇特动物</a>
+            </li>
+        </ul>
+    </div>
+    <!--搜索框-->
+    <div  class="search_box" id="out">
+        <!-- input标签输入框供用户输入数据 --> 
+         <input type="text" class="input" placeholder="搜一搜">    
+         <!-- img标签插入图片 -->
+         <button type="button" class="search_button" id="bt" onclick="ser_bt()"></button>
+
+    </div>
+      <!--个人中心，登录与注册-->
+      <div class="head_portrait">
+        <div class="yh">
+        <a href="#" class="portrait"><img src="./images/head_sp.jpg" alt="" width="100%" class="tx" style="border-radius:50%;object-fit: cover;"></a>
+        <a href="login.html" class="login">&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;&nbsp;|</a>
+        <a href="register.html" class="register">注册</a>
+      </div>
+    </div>
+    </div>
+</div>  
+<!--------------------------------网页banner大图------------------------->
+    <div class="lunbo"><!--轮播，这里定义轮播盒子的范围-->
+        <div class="content"><!---轮播盒子中，图片的父级-->
+            <ul id="item"><!---用ul和li去包含图片内容，更方便以后图片的修改，这里ul设置id名为js的连接做配合-->
+                <li class="item active"><!--为轮播盒子的li取类名-->
+                    <a href="grandson.html"><img src="./images/fish.jpg">
+                        <div class="intro">
+                            <h1 class="intro_A">马夫鱼：</h1>
+                            <p class="intro_B" style="text-indent: 2em;line-height: 40px;">马夫鱼（学名：Heniochus acuminatus）：成鱼体甚侧扁，背缘高而隆起，略呈三角形。背鳍鳍棘11根，第四鳍棘延长呈鞭状，鳍膜亦随之延长。口小。牙细尖呈刚毛状。体侧有2条宽横黑带间杂宽阔白色肤纹。侧线完全。尾鳍近截形。身体，尾鳍及背鳍呈现亮黄。</p>
+                        </div>
+                    </a><!--每张图片点击后应该要跳转，所以将图片img嵌在a标签中-->
+                </li>
+                <li class="item">
+                    <a href="grandson.html"><img src="./images/panda2.jpg">
+                        <div class="intro">
+                            <h1 class="intro_A">大熊猫：</h1>
+                            <p class="intro_B" style="text-indent: 2em;line-height: 40px;">大熊猫（学名：Ailuropoda melanoleuca）：属于熊科、大熊猫属的哺乳动物。已在地球上生存了至少800万年被誉为“活化石”和“中国国宝”，世界自然基金会的形象大使，是世界生物多样性保护的旗舰物种。</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="grandson.html"><img src="./images/limao.jpg">
+                        <div class="intro">
+                            <h1 class="intro_A">浣熊：</h1>
+                            <p class="intro_B" style="text-indent: 2em;line-height: 40px;">浣熊，（学名：Procyon lotor）：是哺乳纲真兽亚纲食肉目浣熊科浣熊属的一种动物，原产自北美洲，现为无危物种。浣熊特征为眼睛周围有一圈深色皮毛，体型较小，体长约40到70厘米。因其常在河边捕食鱼类并在水中浣洗食物，故名浣熊。</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="grandson.html"><img src="./images/arctic_fox.jpg">
+                        <div class="intro">
+                            <h1 class="intro_A">北极狐：</h1>
+                            <p class="intro_B" style="text-indent: 2em;line-height: 40px;">北极狐（学名：Vulpes lagopus）：颜面窄，嘴尖，耳圆，尾毛蓬松，尖端白色。冬季全身体毛为白色，仅鼻尖为黑色；夏季体毛为灰黑色，腹面颜色较浅。具有很密的绒毛和较少的针毛，可在零下50℃的冰原上生活。足底毛特别厚。</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="grandson.html"><img src="./images/elk.jpg">
+                        <div class="intro">
+                            <h1 class="intro_A">麋鹿：</h1>
+                            <p class="intro_B" style="text-indent: 2em;line-height: 40px;">麋鹿（学名：Elaphurus davidianus）：是鹿科、麋鹿属唯一的鹿类动物。因为它头脸狭长像马、角像鹿又与其它鹿略有不同、蹄子宽大像牛、尾细长像驴，因此又名四不像。性好合群，善游泳，喜欢以嫩草和水生植物为食。夏季求偶发情，比其它大多数鹿类都早一个季度。</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        <div id="btn-left"><</div><!--轮播侧边小箭头-->
+        <div id="btn-right">></div>
+        <ul id="circle"><!--有多少个轮播图片就设置多少个小圆点导航，同样使用li-->
+            <li class="circle white"></li>
+            <li class="circle"></li>
+            <li class="circle"></li>
+            <li class="circle"></li>
+            <li class="circle"></li>
+        </ul>
+    </div>
+</div>
+<!--------------------------------网页功能区---------------------------------------->    
+<!--------------------------------动物分类------------------------------------------>
+<div class="bgc1">
+    <div class="domain">
+        <h2 class="dom_classify">动物分类&nbsp;></h2>
+        <div class="dom_classify1">
+            <ul class="dom_fq">
+                <li >
+                    <div  onmouseenter="ent(0)" onmouseleave="out(0)">
+                        <img src="./images/arthropod.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(0)" onmouseleave="out(0)">
+                            <h3>节肢动物&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span>节肢动物</span>是一种无脊椎动物动物具有外骨骼，一个分段的体和成对的关节附属物。全世界约有120万现存种，占整个现有动物种数的80%。节肢动物生活环境极其广泛，无论是海水、淡水、土壤、空中都有它们的踪迹。有些种类还寄生在其他动物的体内或体外。</p>
+                            <a href="sort1.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div onmouseenter="ent(1)" onmouseleave="out(1)">
+                        <img src="./images/mammals.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(1)"  onmouseleave="out(1)">
+                            <h3>哺乳动物&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span>哺乳动物</span>是动物世界中形态结构最高等、生理机能最完善的动物。与其他动物相比，哺乳动物最突出的特征在于胎生以及其幼崽由母体分泌的乳汁喂养长大。所有哺乳动物都长有毛发，以保持体温的恒定，适应各种复杂的生存环境</p>
+                            <a href="sort2.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div onmouseenter="ent(2)" onmouseleave="out(2)">
+                        <img src="./images/fish1.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(2)"  onmouseleave="out(2)">
+                            <h3>鱼类&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span> 鱼类</span>是以鳃呼吸、通过尾部和躯干部的摆动以及鳍的协调作用游泳和凭上下颌摄食的变温水生脊椎动物，属于脊索动物门中的脊椎动物亚门。</p>
+                            <a href="sort3.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div onmouseenter="ent(3)" onmouseleave="out(3)">
+                        <img src="./images/Amphibian.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(3)"  onmouseleave="out(3)">
+                            <h3>两栖动物&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span>两栖动物</span> 是一类原始的、初登陆的、具五趾型的变温四足动物，皮肤裸露，分泌腺众多，混合型血液循环。其个体发育周期有一个变态过程，即以鳃（新生器官）呼吸生活于水中的幼体，在短期内完成变态，成为以肺呼吸能营陆地生活的成体。</p>
+                            <a href="sort4.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div onmouseenter="ent(4)" onmouseleave="out(4)">
+                        <img src="./images/bird.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(4)"  onmouseleave="out(4)">
+                            <h3>鸟类&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span>鸟类</span>是脊椎动物亚门的一纲。体均被羽，恒温，卵生，胚胎外有羊膜。前肢成翼，有时退化。多营飞翔生活。心脏是2心房2心室。仅保留右体动脉弓，左体动脉弓退化。骨多空隙，内充气体。呼吸器官除肺外，有辅助呼吸的气囊。</p>
+                            <a href="sort5.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div onmouseenter="ent(5)" onmouseleave="out(5)">
+                        <img src="./images/insect.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(5)"  onmouseleave="out(5)">
+                            <h3>昆虫&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span>昆虫</span>种类繁多、形态各异，属于无脊椎动物中的节肢动物，是地球上数量最多的动物群体，在所有生物种类（包括细菌、真菌、病毒）中占了超过50%，它们的踪迹几乎遍布世界的每一个角落。</p>
+                            <a href="sort6.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div onmouseenter="ent(6)" onmouseleave="out(6)">
+                        <img src="./images/reptiles.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(6)"  onmouseleave="out(6)">
+                            <h3>爬行动物&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span>爬行动物</span>属于四足总纲的羊膜动物，是对除鸟类及哺乳类以外的蜥形纲及合弓纲所有物种的通称，它们栖息于除了南极洲以外的每个大陆，主要分布于热带与副热带地区。</p>
+                            <a href="sort7.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div onmouseenter="ent(7)" onmouseleave="out(7)">
+                        <img src="./images/mollusk.jpg" alt="" width="250px">
+                        <div class="mask" onmouseenter="ent(7)"  onmouseleave="out(7)">
+                            <h3>软体动物&nbsp;</h3>
+                            <span class="ts">^</span>
+                            <p><span>软体动物</span>也称贝类，是软体动物门动物的统称，是除节肢动物外最大的类群，约10万种。体制的差异很大，但有共同的特征∶体柔软而不分节，一般分头-足(有的头退化或消失；足肌肉质)和内脏-外套膜(由背侧的内脏团、外套膜及外套腔组成)两部分。</p>
+                            <a href="sort8.html" class="maskjump">详情页&nbsp;></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--------------------------------热门动物------------------------------------->
+<div class="bgc2" id="bgc2">
+    <div class="hot_animals">
+        <h2>热门动物></h2>
+        <ul id="Hot">
+            <li  class="hotone"> 
+                <h3> 1、梅狸猫</h3>
+                <div class="hot">
+                    <div class="tup">
+                        <img src="./images/Amagi.jpg" alt="" width="50px" title="梅狸猫">
+                    </div>
+                    <p style="font-size: 13px;"><span style="font: normal 600 15px 微软雅黑;color: #B5C5C5;">简介:</span>梅狸猫是一种哺乳动物，外形区别于狸花猫，头顶呈现出独特的灰白色毛发，呈中分状，前肢毛色偏黑，背部有两条白色条带，区别梅狸猫的本职就是中分的头毛和白色的背带，梅狸猫的幼年期一般为两年半，两年半后身体变大，毛发呈现通体黄色，部分伴有斑点花纹，喜欢圆形球体玩具，鸡肉家禽、香精煎鱼、油饼等食物，大型梅狸猫也被称为狮豹者。</p>
+                    <a href="grandson.html">点击查看更多&nbsp;></a>
+                </div>                   
+            </li>
+            <li  class="hotone"> 
+                <h3> 2、&nbsp;&nbsp;嚎哮马</h3>
+                <div class="hot">
+                    <div class="tup">
+                        <img src="./images/horse.jpg" alt="" width="50px" title="嚎哮马">
+                    </div>
+                    <p style="font-size: 13px;"><span style="font: normal 600 15px 微软雅黑;color: #B5C5C5;">简介:</span>嚎哮马是一种狗科动物，是18世纪末从英国引进的养殖的一种狗，外貌像一头马，所以又称嚎哮马，它的体型大而壮，毛色也很多样，有黑白相间、棕黄相间，甚至有全黑或全白等。</p>
+                    <a href="grandson.html">点击查看更多&nbsp;></a>
+                </div>                   
+            </li>
+            <li  class="hotone"> 
+                <h3> 3、&nbsp;&nbsp;灰勒潜兔</h3>
+                <div class="hot">
+                    <div class="tup">
+                        <img src="./images/rabbit.jpg" alt="" width="50px" title="灰勒塔德潜兔">
+                    </div>
+                    <p style="font-size: 13px;"><span style="font: normal 600 15px 微软雅黑;color: #B5C5C5;">简介:</span>是一种体型庞大但脾气温和的直立植物杂食兔，可以在潮湿的雨林和沼泽地中生活。它们有时也被称为南美水兔，是拉丁美洲的一种特有物种，而且只能适应低海拔的森林。</p>
+                    <a href="grandson.html">点击查看更多&nbsp;></a>
+                </div>                   
+            </li>
+            <li  class="hotone"> 
+                <h3> 4、&nbsp;&nbsp;绵羊</h3>
+                <div class="hot">
+                    <div class="tup">
+                        <img src="./images/sheep.jpg" alt="" width="50px" title="绵羊">
+                    </div>
+                    <p style="font-size: 13px;"><span style="font: normal 600 15px 微软雅黑;color: #B5C5C5;">简介:</span>牛科绵羊属的一种常见的饲养动物。身体丰满，体毛绵密。头短。雄羊有螺旋状的大角，非常有威严但其实是起好看的作用，雌羊没有角或仅有细小的角。</p>
+                    <a href="grandson.html">点击查看更多&nbsp;></a>
+                </div>                   
+            </li>
+            <li  class="hotone"> 
+                <h3> 5、&nbsp;&nbsp;老鹰</h3>
+                <div class="hot">
+                    <div class="tup">
+                        <img src="./images/eagle.jpg" alt="" width="50px" title="老鹰">
+                    </div>
+                    <p style="font-size: 13px;"><span style="font: normal 600 15px 微软雅黑;color: #B5C5C5;">简介:</span>鹰是肉食性动物，会捕捉老鼠、蛇、野兔或小鸟。大型的鹰科鸟类（雕）可以捕捉山羊、绵羊和小鹿。它体态雄伟，性情凶猛，动物学上称它是猛禽类。</p>
+                    <a href="grandson.html">点击查看更多&nbsp;></a>
+                </div>                   
+            </li>
+        </ul>
+    </div>
+</div>
+    <!--------------------------------奇特动物--------------------->
+    <div class="bgc3" id="bgc3">
+        <div class="qt_animals">
+            <h2>奇特动物&nbsp;></h2>
+            <h3>世界之最</h3>
+            <div>    
+                <ul>
+                    <li class="qt_1">
+                        <a href="qtdw.html"><img src="./images/biggest.jpg" alt="" width="100%" style="object-fit: cover;object-position: center;"></a>
+                        <div class="qt_intr">
+                            <p><span class="the1">蓝鲸</span>不仅仅是目前的世界之最，还是地球上已知的生存的体积最大的动物，就连恐龙时期的恐龙都比不上它的。蓝鲸长达33米，相当于11层楼的高度，重达181吨，也就是18万1千克，也就是，36万2千斤，这相当于是3600个体重100斤的人总和，乃世界最大动物，没有之一。</p>
+                            <a href="grandson.html">查看详情&nbsp;></a>
+                        </div>
+                    </li>
+                    <li class="qt_2">
+                        <a href="qtdw.html"><img src="./images/fastest.jpg" alt="" width="800px"></a>
+                        <div class="qt_intr">
+                            <p><span class="the2">猎豹</span>是一种以美丽独特的皮毛，和极致的奔跑速度而闻名。它是动物界中跑得快的动物，最高时速达到了130千米/小时。猎豹发现猎物后会悄悄的跟在它后面，冲上去捕捉猎物。猎豹在高速奔跑的期间，非常容发热，它们需要每隔一段时间停下来散热。</p>
+                            <a href="grandson.html">查看详情&nbsp;></a>
+                        </div>
+                    </li>
+                    <li class="qt_3">
+                        <a href="qtdw.html"><img src="./images/tooth.jpg" alt="" width="800px"></a>
+                        <div class="qt_intr">
+                            <p><span class="the3">蜗牛</span>是世界上牙齿最多的动物。虽然它的嘴大小和针尖差不多，但是却有25600颗牙齿。蜗牛有一条锯齿状的舌头，科学家们称之为“齿舌”。它的牙齿很小，肉眼无法看到，但是却十分厉害，即便你把蜗牛放入一个比它的身体还硬的硬纸盒中，它也能咬破硬纸板爬出来。</p>
+                            <a href="grandson.html">查看详情&nbsp;></a>
+                        </div>
+                    </li>
+                    <li class="qt_4">
+                        <a href="qtdw.html"><img src="./images/eyes.jpg" alt="" width="800px"></a>
+                        <div class="qt_intr">
+                            <p><span class="the4">蜻蜓</span>一般来说我们常见的动物都是有两只眼睛的，从天上飞的到地上跑的再到水里游的，包括我们吃的鱼、虾等都是两只眼睛，而我们常见的蜻蜓却有28万个眼晶体，被称为是世界上眼睛最多的动物，大家应该怎么也想不到是蜻蜓吧。</p>
+                            <a href="grandson.html">查看详情&nbsp;></a>
+                        </div>
+                    </li>
+                    <li class="qt_5">
+                        <a href="qtdw.html"><img src="./images/tallest.jpg" alt="" width="800px"></a>
+                        <div class="qt_intr">
+                            <p><span class="the5">长颈鹿</span>是目前世界上最高的动物，没有没有之一，平均的身高在6-8米之间，脖子就长达2.4米，重量在1500斤左右，刚出生的长颈鹿身高就在1.8米了，比一般的成年男性都是要高的多了。</p> 
+                            <a href="grandson.html">查看详情&nbsp;></a>
+                        </div>
+                    </li>
+                    <li class="qt_6">
+                        <a href="qtdw.html"><img src="./images/sloth.jpg" alt="" width="800px"></a>
+                        <div class="qt_intr">
+                            <p><span class="the2">树懒</span>是一种主要分布在南美洲的哺乳动物，之所以叫树懒，就是因为它们太懒了，不管做什么都是懒洋洋的，行动速度甚至比乌龟还慢，因为懒它们可以一个月不吃东西。</p> 
+                            <a href="grandson.html">查看详情&nbsp;></a>
+                        </div>
+                    </li>
+                    <li class="qt_7">
+                        <a href="qtdw.html"><img src="./images/condor.jpg" alt="" width="800px"></a>
+                        <div class="qt_intr">
+                            <p><span class="the1">旗鱼</span>是吉尼斯世界纪录中速度最快的鱼，是公认的短距离内游泳速度最快的鱼类，它的名字来源于背部的帆状鳍，当它游泳时会折叠起来减少水的阻力。</p> 
+                            <a href="grandson.html">查看详情&nbsp;></a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="country_animals">
+                    <h4>大洲特色</h4>
+                    <ul>
+                        <li>
+                        <a href="qtdw.html"><img src="./images/AF.jpg" alt="" width="250px"> </a>
+                        <div class="ca_introduce" onmouseenter="ent2(0)"  onmouseleave="out2(0)">
+                            <h5>非洲&nbsp;</h5>
+                            <span class="ca_ts">^</span><!--如果详情展开是没有点击的-->
+                            <p class="induce" id="introduce">非洲工业开发程度低，自然生态保留较好，且靠近赤道，拥有草原森林等各种环境，大型化和特化品种较多，保留的原始品种也较多。因为植被丰富，大型化种类也很多。</p>
+                        </div> 
+                        <span class="ac_intro">非洲狮</span>
+                    </li>
+                        <li>
+                        <a href="qtdw.html"><img src="./images/AI.jpg" alt="" width="250px"></a>
+                        <div class="ca_introduce" onmouseenter="ent2(1)"  onmouseleave="out2(1)">
+                            <h5>亚洲&nbsp;</h5>
+                            <span class="ca_ts">^</span><!--如果详情展开是没有点击的-->
+                            <p class="induce" id="introduce">亚洲属大陆型动物区，亚区。绝大部分属全北区，亚洲动物区系属全北区和印度马来动物种类成分相对较贫乏与欧洲、北美洲和非洲动物界之间有着密切联系</p>
+                        </div>
+                        <span class="ac_intro">亚洲象</span> 
+                    </li>
+                        <li>
+                        <a href="qtdw.html"><img src="./images/AN.jpg" alt="" width="250px"></a>
+                        <div class="ca_introduce" onmouseenter="ent2(2)"  onmouseleave="out2(2)">
+                            <h5>南极洲&nbsp;</h5>
+                            <span class="ca_ts">^</span><!--如果详情展开是没有点击的-->
+                            <p class="induce" id="introduce">南极洲动物生活在寒冷的气候中，它们的四肢、耳朵、鼻子或尾巴较小，以最大程度地减少热量损失，为了在极寒气候下生存。动物会在皮肤下积累大量脂肪以防止热量流失。 </p>
+                        </div> 
+                        <span class="ac_intro">企鹅</span>
+                    </li>
+                        <li>
+                        <a href="qtdw.html"><img src="./images/EU.jpg" alt="" width="250px"></a>
+                        <div class="ca_introduce" onmouseenter="ent2(3)"  onmouseleave="out2(3)">
+                            <h5>欧洲&nbsp;</h5>
+                            <span class="ca_ts">^</span><!--如果详情展开是没有点击的-->
+                            <p class="induce" id="introduce">欧洲的动物群延伸到所谓的大草原，它延伸到欧亚大陆的中心，将大草原、灌木丛、草原和从摩尔多瓦到西伯利亚和匈牙利都可以看到的其他类型的生物群落组合在一起。</p>
+                        </div>
+                        <span class="ac_intro">野牛</span> 
+                    </li>
+                        <li>
+                        <a href="qtdw.html"><img src="./images/NA.jpg" alt="" width="250px"></a>
+                        <div class="ca_introduce" onmouseenter="ent2(4)"  onmouseleave="out2(4)">
+                            <h5>北美洲&nbsp;</h5>
+                            <span class="ca_ts">^</span><!--如果详情展开是没有点击的-->
+                            <p class="induce" id="introduce">北美洲的动物区系十分丰富，因此动物的种类繁多，包含了多个气温带的代表动物，其中美洲野牛、加拿大黑雁、东方驼鹿、美洲河狸与美洲豹是比较有代表性的。</p>
+                        </div>
+                        <span class="ac_intro">美洲豹</span> 
+                    </li>
+                        <li>
+                        <a href="qtdw.html"><img src="./images/OC.jpg" alt="" width="250px"></a>
+                        <div class="ca_introduce" onmouseenter="ent2(5)"  onmouseleave="out2(5)">
+                            <h5>大洋洲&nbsp;</h5>
+                            <span class="ca_ts">^</span><!--如果详情展开是没有点击的-->
+                            <p class="induce" id="introduce">大洋洲由于与其他大陆分离较早，外加与其他大陆隔海相望，且距离遥远，在漫长的历史演化中，由于缺乏天敌，大洋洲的许多特有动物得以幸存，其动物进化都比较缓慢，有许多“活标本”。</p>
+                        </div>
+                        <span class="ac_intro">袋鼠</span> 
+                    </li>
+                        <li>
+                        <a href="qtdw.html"><img src="./images/SA.jpg" alt="" width="250px"></a>
+                        <div class="ca_introduce" onmouseenter="ent2(6)"  onmouseleave="out2(6)">
+                            <h5>南美洲&nbsp;</h5>
+                            <span class="ca_ts">^</span><!--如果详情展开是没有点击的-->
+                            <p class="induce" id="introduce">南美洲是新热带动物区系的主要构成部分，南美洲的动物区系与世界其它大洲相比，具有许多独特之处，概括起来就是多样性、特有性和原始性。</p>
+                        </div>
+                        <span class="ac_intro">浣熊</span> 
+                    </li>
+                </ul>
+                </div>
+            </div>
+        </div> 
+<!------------------------------------网页侧边世界各大洲特色动物展示------------>
+</div>
+
+
+<!--------------------------------猜你喜欢区------------------------------>
+<div class="bgc4" id="bgc4" style="position: relative;">
+    <div class="guess_love">
+        <h2>猜你喜欢&nbsp;></h2>
+        <div class="love">
+            <span class="refresh" onclick="handleClick()"><a href="javaScript:;" id="change">换一批 &nbsp;<img src="./images/refresh.jpg" alt="" width="15px"></a> </span>
+            <ul class="guess">
+                <li>    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <div><img src="./images/Amagi.jpg" alt="" width="185px" style="border-radius: 10%;"></div>
+                            </div>  
+                            <div class="flip-card-back">
+                                <p class="title">梅狸猫</p>
+                                <p class="t2">梅狸猫是一种哺乳动物，外形区别于狸花猫，头顶呈现出独特的灰白色毛发，呈中分状，前肢毛色偏黑，背部有两条白色条带。</p>
+                                <a href="grandson.html" class="guess_xq">详情页></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <div><img src="./images/fengniao.jpg" alt="" width="185px" style="border-radius: 10%;"></div>
+                            </div>  
+                            <div class="flip-card-back">
+                                <p class="title">蜂鸟</p>
+                                <p class="t2">蜂鸟是已知的唯一能倒着飞的鸟，它们经常在远离花朵的时候这样做。</p>
+                                <a href="grandson.html" class="guess_xq">详情页></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <div><img src="./images/tuishun.jpg" alt="" width="185px" style="border-radius: 10%;"></div>
+                            </div>  
+                            <div class="flip-card-back">
+                                <p class="title">兔狲</p>
+                                <p class="t2">兔狲是一种外形和猫咪很相似的一种猫科动物，这种动物的表情十分丰富，是猫科动物中的表情帝，但由于很难人工饲养，所以大家在动物园中很难见到它的身影。</p>
+                                <a href="grandson.html" class="guess_xq">详情页></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <div><img src="./images/shuilai.jpg" alt="" width="185px" style="border-radius: 10%;"></div>
+                            </div>  
+                            <div class="flip-card-back">
+                                <p class="title">水獭</p>
+                                <p class="t2">水獭睡觉时会“牵手”，所以不会飘离对方。而且看上去超级可爱。</p>
+                                <a href="grandson.html" class="guess_xq">详情页></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <div><img src="./images/pangxie.jpg" alt="" width="185px" style="border-radius: 10%;"></div>
+                            </div>  
+                            <div class="flip-card-back">
+                                <p class="title">螃蟹</p>
+                                <p class="t2">螃蟹也是会蜕壳的动物之一，因为螃蟹在生长过程中，坚硬的外壳并不会随着身体的长大而长大，所以螃蟹需要定期的蜕一次壳才能保证身体的正常生长。</p>
+                                <a href="grandson.html" class="guess_xq">详情页></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <div><img src="./images/haitun.jpg" alt="" width="185px" style="border-radius: 10%;"></div>
+                            </div>  
+                            <div class="flip-card-back">
+                                <p class="title">海豚</p>
+                                <p class="t2">海豚的躯干呈纺锤形，皮肤光滑无毛，身体矫健而灵活，善于跳跃和潜泳，是在水中行动最迅速的哺乳动物。它们的大脑沟回复杂，记忆力良好，是智商最高的动物家族之一。</p>
+                                <a href="grandson.html" class="guess_xq">详情页></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--------------------------------网页footer区------------------------------>
+<div class="footer">
+    <div style="margin-left: 12%;line-height: 40px;position: absolute;padding-top: 10px;"><!---手打logo-->
+        <span style="font-size: 60px;color: #cefd85;font-weight: 600;">A</span>
+        <span style="color: #82dee4;font-size: 40px;font-weight: 500"> nimals</span> <br>
+        <span  style="font-size: 50px;color: #cefd85;font-weight: 600;">W</span>
+        <span style="color: #82dee4;font-size: 40px;font-weight: 500">orld</span>
+    </div>
+    <div class="copyright">
+        <div class="last">        
+            <h6>联系方式</h6>
+            <p><b> 作者邮箱：</b>3215624200@qq.com</p>
+            <p><b>作者电话 ：</b>17347861274</p>
+        </div>
+        <div class="last">        
+            <h6>关于我们</h6>
+            <p style="font-size: 14px;font-weight: 600;">制作团队成员：</p> 
+            <p>22级软工唐无忌，22级软工涂旭，<br> 22级软工王贵东，22级软工黎明。</p>
+        </div>
+        <div class="last">           
+            <h6>地址</h6>
+            <p>重庆城市科技学院16栋宿舍楼437寝室</p>
+        </div>
+    </div>
+    <div class="lianjie">
+        <ul>
+            <li style="padding-left: 40px;">友情链接：</li>
+            <li><a href="https://species.sciencereading.cn/biology/v/biologicalIndex/122.html">中国生物志库</a> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|</li>
+            <li style="padding-left: 20px;"><a href="https://baike.baidu.com/">百度百科</a> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;|</li>
+            <li><a>问题反馈</a></li>
+        </ul>
+    </div>
+</div>
+
+
+<!---------------------------------引入Jquery-------------------------->
+<script src="./JS/jquery-3.6.4.js"></script>
+
+<script>
+//提示小箭头的js
+    let ts=$('.ts')
+    let mask=$('.mask')
+    let ca_ts=$('.ca_ts')
+     function ent(i){//传递参数，判断在哪里发生的事件
+        ts[i].classList.add('tsed')
+        mask[i].classList.add('masked')
+    }
+    function ent2(i){
+            ca_ts[i].classList.add('tsedd')
+    }
+    function out(i){
+        ts[i].classList.remove('tsed')
+        mask[i].classList.remove('masked')
+    }
+    function out2(i){
+        ca_ts[i].classList.remove('tsedd')
+    }
+    //登录跳转后的变化
+    let login=$('.login')
+    let regieter=$('.register')
+    let user_data=JSON.parse(sessionStorage.getItem('Users'))
+
+    console.log(user_data)
+    if(user_data!==null){
+        login.text(user_data.username)//修改原素内容
+        regieter.text('')
+        const head=$('.tx')//修改头部头像的url
+        head.attr('src',user_data.headPortrait)
+        console.log(user_data.headPortrait);
+        $('.login').attr('href','personal.html')
+        $('.portrait').attr('href','personal.html')
+       
+    }  
+    //用户头像的点击
+    $('.portrait').click(function(){
+        if(user_data===null){
+            alert('请先登录！')
+        }
+        else{
+            location.href='personal.html'
+        }
+    })
+
+
+</script>
+<script>
+    const arr = [{
+        name:'梅狸猫',
+        text:'梅狸猫是一种哺乳动物，外形区别于狸花猫，头顶呈现出独特的灰白色毛发，呈中分状，前肢毛色偏黑，背部有两条白色条带。',
+        img:'./images/Amagi.jpg'
+    },{
+        name:'蜂鸟',
+        text:'蜂鸟是已知的唯一能倒着飞的鸟，它们经常在远离花朵的时候这样做。',
+        img:'./images/fengniao.jpg'
+    },{
+        name:'兔狲',
+        text:'兔狲是一种外形和猫咪很相似的一种猫科动物，这种动物的表情十分丰富，是猫科动物中的表情帝，但由于很难人工饲养，所以大家在动物园中很难见到它的身影。',
+        img:'./images/tuishun.jpg'
+    },{
+        name:'水獭',
+        text:'水獭睡觉时会“牵手”，所以不会飘离对方。而且看上去超级可爱。',
+        img:'./images/shuilai.jpg'
+    },{
+        name:'螃蟹',
+        text:'螃蟹也是会蜕壳的动物之一，因为螃蟹在生长过程中，坚硬的外壳并不会随着身体的长大而长大，所以螃蟹需要定期的蜕一次壳才能保证身体的正常生长。',
+        img:'./images/pangxie.jpg'
+    },{
+        name:'海豚',
+        text:'海豚的躯干呈纺锤形，皮肤光滑无毛，身体矫健而灵活，善于跳跃和潜泳，是在水中行动最迅速的哺乳动物。它们的大脑沟回复杂，记忆力良好，是智商最高的动物家族之一。',
+        img:'./images/haitun.jpg'
+    },{
+        name:'熊猫',
+        text:'熊猫善于爬树，也爱嬉戏。爬树的行为一般是临近求婚期，或逃避危险，或彼此相遇时弱者借以回避强者的一种方式。大熊猫每天除去一半进食的时间，剩下的一半时间多数便是在睡梦中度过。',
+        img:'./images/mammals.jpg'
+    },{
+        name:'松鼠',
+        text:'松鼠，隶属啮齿目松鼠科，泛指一大类尾巴上披有蓬松长毛的啮齿类动物，现存约有58属285种，分布遍及南极以外的各大洲',
+        img:'./images/songshu.jpg'
+    },{
+        name:'小丑鱼',
+        text:'小丑鱼是对雀鲷科海葵鱼亚科鱼类的俗称，因为脸上都有一条或两条白色条纹，好似京剧中的丑角而得名，是一种热带咸水鱼。',
+        img:'./images/fish1.jpg'
+    },{
+        name:'玻璃章鱼',
+        text:'玻璃章鱼属玻璃蛸科Vitreledonellidae，只有消化器官和眼睛是不透明的，生活在深海中，难以寻觅。',
+        img:'./images/bolizhangyu.jpg'
+    },{
+        name:'鹦鹉',
+        text:'鹦鹉羽色鲜艳，常被作为宠物饲养，它们以其美丽的羽毛，善学人语技能的特点，更为人们所欣赏和钟爱。',
+        img:'./images/yingwu.jpg'
+    },{
+        name:'猫头鹰',
+        text:'猫头鹰头宽大，嘴短而粗壮前端成钩状，头部正面的羽毛排列成面盘，部分种类具有耳状羽毛。双目的分布，面盘和耳羽使本目鸟类的头部与猫极其相似，故俗称猫头鹰。',
+        img:'./images/maotouying.jpg'
+    }]
+    const handleClick = () => {
+        const  guess = document.querySelector('.guess')  
+        let listDomStr = ''; 
+        const randomValues = getRandomValues(); // 获取随机选取的六个值
+        console.log(randomValues); // 输出随机选取的六个值
+        for(let i = 0; i < randomValues.length; i++){
+            listDomStr += `
+                <li>    
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                            <div><img src="${randomValues[i].img}" alt="" width="185px" style="border-radius: 10%;"></div>
+                            </div>  
+                            <div class="flip-card-back">
+                                <p class="title">${randomValues[i].name}</p>
+                                <p class="t2">${randomValues[i].text}</p>
+                                <a href="grandson.html" class="guess_xq">详情页></a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            `
+        }
+        guess.innerHTML = listDomStr;
+    }
+
+
+function getRandomValues() {
+  const result = []; // 存储结果的数组
+  while (result.length < 6) {
+    const randomIndex = Math.floor(Math.random() * arr.length); // 随机生成一个下标
+    const randomValue = arr[randomIndex]; // 根据下标获取对应的值
+    if (!result.includes(randomValue)) { // 如果结果数组中不包含该值，则将其存入结果数组中
+      result.push(randomValue);
+    }
+  }
+  console.log(result,`result`)
+  return result; // 返回随机选取的六个值
+}
+/*------------------------------------濒危动物--------------------*/
+ $('#card1').mouseenter(function(){
+    $(this).addClass('carded')
+    $('#card1 span').addClass('spaned')
+    $('.card_ms').addClass('card_msed')
+ })
+ $('#card1').mouseleave(function(){
+    $(this).removeClass('carded')
+    $('#card1 span').removeClass('spaned')
+ })
+ $('#card2').mouseenter(function(){
+    $(this).addClass('carded')
+    $('#card2 span').addClass('spaned')
+ })
+ $('#card2').mouseleave(function(){
+    $(this).removeClass('carded')
+    $('#card2 span').removeClass('spaned')
+ })
+//  $('#card3').mouseenter(function(){
+//     $(this).addClass('carded')
+//     $('#card3 span').addClass('spaned')
+//  })
+//  $('#card3').mouseleave(function(){
+//     $(this).removeClass('carded')
+//     $('#card3 span').removeClass('spaned')
+//  })
+
+</script>
+</body>
+</html>

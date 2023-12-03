@@ -1,0 +1,373 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+body {
+    background-color: #4B7C99;
+}
+
+#bigbox {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#banner {
+    width: 1000px;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+#banner img {
+    width: 1000px;
+}
+
+nav {
+    background-color: #CCD0D9;
+    width: 1000px;
+    height: 60px;
+}
+
+nav a {
+    text-decoration: none;
+    line-height: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #020C16;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #1a9be6;
+}
+
+.dangqian {
+    color: #1a9be6;
+
+}
+
+#main {
+    position: relative;
+    width: 1000px;
+    height: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
+#main_left {
+    width: 300px;
+    display: inline-block;
+    background-color: rgba(130, 157, 147, 0);
+}
+
+#main_left img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+#main_left p {
+    margin-left: 55px;
+    line-height: 40px;
+}
+
+#main_left span {
+    font-weight: bold;
+}
+
+#main_right {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    height: 90%;
+}
+.jianjie{
+    position: absolute;
+    box-sizing: border-box;
+    width: 530px;
+    height: 220px;
+    background-color: rgba(246, 220, 215,0);
+    top: 25px;
+    left: 450px;
+    border-radius: 20px;
+    outline: none;
+    resize: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: black;
+    padding: 20px;
+    letter-spacing: 5px;
+}
+.jianjie:focus{
+    background-color: rgba(246, 220, 215,0.5);
+}
+.queren{
+    position: absolute;
+    width: 60px;
+    height: 30px;
+    top: 220px;
+    left: 900px;
+    outline: none;
+    border: 0;
+    color: #e9b8ac;
+    font-weight: 800;
+    background:0;
+}
+.queren:hover{
+    transition: all 1s;
+    border-radius:10px ;
+    background-color: rgba(114, 114, 114, 0.5);
+}
+.guess{
+    transition: all 1s;
+    display: flex;
+    width: 100%;
+    height: 450px;
+    flex-wrap: wrap;
+}
+.guess li{
+    margin-top: 2rem;
+    margin-left: 6.4rem;
+}
+.flip-card {
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;/*定义3D元素距离视图的距离*/
+    font-family: sans-serif;
+  }
+  .title {
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .t2{
+        text-indent: 2em;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid coral;
+    border-radius: 1rem;
+  }
+  
+  .flip-card-front {
+    background: linear-gradient(120deg, rgb(246, 220, 215) 50%, rgb(233, 184, 172)80%);
+  }
+  
+  
+  .flip-card-back {
+    background: linear-gradient(120deg, rgb(233, 184, 172) 50%, rgb(246, 220, 215)80%);
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+.button {
+    background-color: rgba(173, 194, 181, 0.3);
+}
+.liuyan{
+    outline: none;
+    resize: none;
+    height: 400px;
+    width: 80%;
+    position: absolute;
+    background-color:rgb(246, 220, 215);
+    top: 10px;
+    left: 100px;
+    display: none;
+}
+footer {
+    line-height: 60px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #CCD0D9;
+}
+
+
+#main_right ul li span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#liuyan {
+    transition: all 1s;
+    width: 660px;
+    margin-left: 10px;
+    margin: 20px;
+    background-color:rgb(246, 220, 215);
+}
+
+#liuyan span {
+    display: inline-block;
+    width: 80px;
+    line-height: 40px;
+}
+.button span {
+    display: inline-block;
+    width: 100px;
+    height: 36px;
+    margin-left: 26%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button span:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.buttoned{
+    transition: all 1s;
+    display: block;
+    border-bottom: 3px solid rgb(233, 184, 172);
+}
+.footer {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(114, 114, 114, 0.8);
+    margin: auto;
+    margin-top: 300px;
+}
+
+.footer img {
+    margin-left: 200px;
+}
+.lianjie a{
+    color: white;
+}
+.copyright {
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    width: 900px;
+    height: 200px;
+    color: #F7F7F7;
+}
+
+.last {
+    width: 300px;
+    height: 200px;
+    float: left;
+    line-height: 22px;
+}
+
+.footer h6 {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: 10px;
+}
+
+.footer p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.footer .lianjie {
+    width: 600px;
+    height: 30px;
+    position: absolute;
+    bottom: 5%;
+    left: 33%;
+}
+
+.lianjie li {
+    width: 150px;
+    height: 30px;
+    float: left;
+    line-height: 30px;
+    position: relative;
+
+}
+
+.lianjie li a:hover {
+    color: #d29e53;
+}
+
+.index {
+    position: relative;
+    left: -80px;
+    top: 30px;
+    background-color: rgba(0, 0, 0, 0);
+
+}
+
+.index:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.index a {
+    color: rgb(255, 255, 255,.6);
+    font-weight: 700;
+    font-size: large;
+
+}
+.index a:hover {
+    color: #fff;
+    font-weight: 700;
+    font-size: large;
+}
+/* 用户头像修改 */
+/*  */
+.modifiedData {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 70px;
+    height: 20px;
+    border-radius: 5%;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 10px #999;
+}
+.modifiedData:hover {
+    box-shadow: 0 0 10px #996;
+}
+.dialog{
+    position: absolute;
+    right:20%;
+    top: 10%;
+    width: 500px;
+    height: 400px;
+    border-radius: 5%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    box-shadow: 0 0 10px #999;
+    display: none;
+}
+/* 清除input原本样式，并美化一下选择按钮 */
+#choseHead{
+    width: 100px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color:#82dee4
+}
